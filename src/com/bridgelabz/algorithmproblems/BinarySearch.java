@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class BinarySearch {
 	static Scanner sc=new Scanner(System.in);
-	int[] arr= {1,2,3,4};
 	static String[] words="apple banana cat dog elephant frog".split(" ");
 	
 	public static boolean binarySearch(String key) {
