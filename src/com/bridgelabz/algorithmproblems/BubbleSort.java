@@ -2,29 +2,29 @@ package com.bridgelabz.algorithmproblems;
 
 public class BubbleSort {
 	
-	static void bubbleSort(int array[])
+	static<K extends Comparable<K>> void bubbleSort(K array[])
     {
         int length = array.length;
         for (int i = 0; i < length-1; i++)
             for (int j = 0; j < length-i-1; j++)
-                if (array[j] > array[j+1])
+                if (array[j].compareTo( array[j+1])>0)
                 {
                    
-                    int temp = array[j];
+                    K temp = array[j];
                     array[j] = array[j+1];
                     array[j+1] = temp;
                 }
     }
   
-    static void printArray(int arr[])
+    static<K> void printArray(K arr[])
     {
         int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i] + " ");
+        for (K val: arr)
+            System.out.print(val + " ");
     }
 
 	public static void main(String[] args) {
-		int[] array= {23,12,5,90,2,33,45};
+		Integer[] array= {23,12,5,90,2,33,45};
 		bubbleSort(array);
 		printArray(array);
 
