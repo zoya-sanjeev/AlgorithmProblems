@@ -2,9 +2,9 @@ package com.bridgelabz.algorithmproblems;
 
 public class MergeSort {
 	
-	static void merge(String array[], int start, int mid, int end) {
+	static<K extends Comparable<K>> void  merge(K array[], int start, int mid, int end) {
 
-		String temp[] = new String[end - start + 1];
+		K temp[] =(K[]) new Object[end - start + 1];
 		int i = start, j = mid+1, k = 0;
 
 		while(i <= mid && j <= end) {
@@ -34,7 +34,7 @@ public class MergeSort {
 	}
 
 
-	static void mergeSort(String Arr[], int start, int end) {
+	static<K extends Comparable<K>> void mergeSort(K Arr[], int start, int end) {
 
 		if(start < end) {
 			int mid = (start + end) / 2;
@@ -43,8 +43,8 @@ public class MergeSort {
 			merge(Arr, start, mid, end);
 		}
 	}
-	static void printArray(String[] array) {
-		for(String word :array ) {
+	static<K> void printArray(K[]array) {
+		for(K word : array ) {
 			System.out.print(word+" ");
 		}
 	}
