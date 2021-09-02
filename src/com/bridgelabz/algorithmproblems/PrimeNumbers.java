@@ -2,6 +2,20 @@ package com.bridgelabz.algorithmproblems;
 
 public class PrimeNumbers {
 	
+	public static boolean checkPalindrome(int num){
+		int reverse=0;
+		int number=num;
+		while(number>0) {
+			int remainder=number % 10;
+			reverse=reverse*10+remainder;
+			number=number/10;
+		}
+		if(reverse==num)
+			return true;
+		else
+			return false;
+		
+	}
 	public static boolean primeOrNot(int numberToCheck) {
 		if(numberToCheck==0 || numberToCheck==1) {
 			return false;
@@ -22,10 +36,9 @@ public class PrimeNumbers {
 	
 	public static void printPrimeNumbers(int start, int end) {
 		for(int i=start;i<=end;i++) {
-			boolean isPrime=primeOrNot(i);
-			if(isPrime) {
+			if(primeOrNot(i) && checkPalindrome(i))
 				System.out.println(i+" ");
-			}
+			
 		}
 	}
 
