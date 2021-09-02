@@ -1,25 +1,22 @@
 package com.bridgelabz.algorithmproblems;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
+
 
 public class BinarySearch {
 	static Scanner sc=new Scanner(System.in);
-	
-	static String[] string="apple banana cat dog elephant fox giraffe".split(" ");;
-	static List<String> words= Arrays.asList(string);
+	int[] arr= {1,2,3,4};
+	static String[] words="apple banana cat dog elephant frog".split(" ");
 	
 	public static boolean binarySearch(String key) {
-		int length=words.size();
+		int length=words.length;
 		int low=0;
 		int mid=length/2 ;
 		int high=length-1;;
 		int compare;
 		while(low <=high) {
 			mid=low+high/2;
-			compare=key.compareTo(words.get(mid));
+			compare=key.compareTo(words[mid]);
 			if(compare==0) {
 				return true;
 			}
@@ -27,7 +24,7 @@ public class BinarySearch {
 				high=mid-1;
 			}
 			else {
-				low=mid;
+				low=mid+1;
 			}
 				
 		}
