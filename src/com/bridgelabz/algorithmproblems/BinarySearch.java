@@ -7,7 +7,7 @@ public class BinarySearch {
 	static Scanner sc=new Scanner(System.in);
 	static String[] words="apple banana cat dog elephant frog".split(" ");
 	
-	public static boolean binarySearch(String key) {
+	public static<K extends Comparable<K>> boolean binarySearch(K key) {
 		int length=words.length;
 		int low=0;
 		int mid=length/2 ;
@@ -15,7 +15,7 @@ public class BinarySearch {
 		int compare;
 		while(low <=high) {
 			mid=low+high/2;
-			compare=key.compareTo(words[mid]);
+			compare=key.compareTo((K) words[mid]);
 			if(compare==0) {
 				return true;
 			}
@@ -32,6 +32,7 @@ public class BinarySearch {
 	}
 
 	public static void main(String[] args) {
+		
 		
 		System.out.println("Enter word to be searched");
 		String key=sc.next();
